@@ -6,8 +6,7 @@ const packages = [
   {
     name: 'Essence',
     tagline: 'For the minimalist bride',
-    price: '₹15,000',
-    priceNote: 'starting from',
+    highlight: 'Ideal for intimate weddings',
     features: [
       'Bridal makeup (HD finish)',
       'Hair styling',
@@ -20,8 +19,7 @@ const packages = [
   {
     name: 'Luxe',
     tagline: 'Our signature experience',
-    price: '₹35,000',
-    priceNote: 'starting from',
+    highlight: 'Customised for multiple events',
     features: [
       'Everything in Essence',
       'Airbrush makeup technique',
@@ -36,13 +34,12 @@ const packages = [
   {
     name: 'Royale',
     tagline: 'The complete transformation',
-    price: '₹65,000',
-    priceNote: 'starting from',
+    highlight: 'Designed for grand weddings',
     features: [
       'Everything in Luxe',
       'All wedding events covered',
       'Bridal skincare package',
-      'Family makeup (4 members)',
+      'Family makeup (up to 4 members)',
       'Dedicated artist for the day',
       'Premium product selection',
       'Post-wedding care kit',
@@ -90,7 +87,7 @@ export function Packages() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="section-heading mb-4">Bridal Packages</h2>
+          <h2 className="section-heading mb-4">The NRV Experience</h2>
           <p className="section-subheading">
             Choose the perfect package for your special day. Each crafted with love and expertise.
           </p>
@@ -128,16 +125,7 @@ export function Packages() {
                 <p className="text-sm text-muted-foreground">{pkg.tagline}</p>
               </div>
 
-              {/* Price */}
-              <div className="text-center mb-8">
-                <div className="font-serif text-4xl font-semibold text-secondary">
-                  {pkg.price}
-                </div>
-                <div className="text-xs text-muted-foreground mt-1">
-                  {pkg.priceNote}
-                </div>
-              </div>
-
+              
               {/* Features */}
               <ul className="space-y-3 mb-8">
                 {pkg.features.map((feature, featureIndex) => (
@@ -155,7 +143,7 @@ export function Packages() {
                 className="w-full"
                 onClick={scrollToContact}
               >
-                Request Quote
+                Book Consultation
               </Button>
             </motion.div>
           ))}
