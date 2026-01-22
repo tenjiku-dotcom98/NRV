@@ -13,7 +13,7 @@ import gallerySaree from '/assets/gallery-saree.jpg';
 import galleryHair from '/assets/gallery-hair.jpg';
 import galleryParty from '/assets/gallery-party.jpg';
 import gallerySkincare from '/assets/gallery-skincare.jpg';
-import heroBridal from '/assets/hero-bridal.jpg';
+
 
 type Category = 'All' | 'Bridal' | 'Party' | 'Hair' | 'Mehndi' | 'Skincare';
 
@@ -25,7 +25,6 @@ const galleryImages = [
   { src: galleryHair, alt: 'Bridal hairstyling', category: 'Hair' as Category },
   { src: galleryParty, alt: 'Glamorous party makeup', category: 'Party' as Category },
   { src: gallerySkincare, alt: 'Skincare treatment', category: 'Skincare' as Category },
-  { src: heroBridal, alt: 'Signature bridal look', category: 'Bridal' as Category },
 ];
 
 const categories: Category[] = ['All', 'Bridal', 'Party', 'Hair', 'Mehndi', 'Skincare'];

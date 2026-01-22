@@ -38,29 +38,40 @@ export function Contact() {
     whatsappOptIn: false,
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+  const message = `
+Hello, I would like to book an appointment ✨
 
-    toast({
-      title: "Booking Request Sent! ✨",
-      description: "Thanks! We'll confirm your booking within 24 hours.",
-    });
+Name: ${formData.name}
+Phone: ${formData.phone}
+Preferred Date: ${formData.date || 'Not specified'}
+Service: ${formData.service}
 
-    setFormData({
-      name: '',
-      phone: '',
-      date: '',
-      service: '',
-      message: '',
-      whatsappOptIn: false,
-    });
-    setIsSubmitting(false);
-  };
+Message:
+${formData.message || 'N/A'}
+`;
 
+  const whatsappNumber = '919901749330'; // ← replace with salon number
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappUrl, '_blank');
+
+  toast({
+    title: 'Redirecting to WhatsApp 📲',
+    description: 'Send the message to confirm your booking.',
+  });
+
+  setFormData({
+    name: '',
+    phone: '',
+    date: '',
+    service: '',
+    message: '',
+    whatsappOptIn: false,
+  });
+};
   return (
     <section id="contact" className="py-24 md:py-32 bg-cream">
       <div className="container mx-auto px-6">
@@ -119,6 +130,7 @@ export function Contact() {
                     type="date"
                     placeholder="Preferred Date"
                     value={formData.date}
+                    min={new Date().toISOString().split('T')[0]}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                     className="form-input"
                   />
@@ -149,16 +161,7 @@ export function Contact() {
                   />
                 </div>
 
-                {/* File Upload */}
-                <div className="border-2 border-dashed border-border rounded-xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer">
-                  <Upload className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
-                  <p className="text-sm text-muted-foreground">
-                    Upload reference photos (optional)
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    JPG, PNG up to 5MB
-                  </p>
-                </div>
+                
 
                 {/* WhatsApp Opt-in */}
                 <div className="flex items-center gap-3">
@@ -221,7 +224,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Call Us</div>
-                    <div className="font-medium">+91 98765 43210</div>
+                    <div className="font-medium">+91 99017 49330</div>
                   </div>
                 </a>
 
@@ -234,7 +237,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Email Us</div>
-                    <div className="font-medium">hello@nrvbeauty.com</div>
+                    <div className="font-medium">info.nrventerprises@gmail.com</div>
                   </div>
                 </a>
 
@@ -244,7 +247,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Visit Us</div>
-                    <div className="font-medium">123 Beauty Lane, Mumbai 400001</div>
+                    <div className="font-medium">#45/4, Kachamaranahalli, Kodathi Gate, Bengaluru – 560085</div>
                   </div>
                 </div>
 
@@ -254,12 +257,12 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Working Hours</div>
-                    <div className="font-medium">Tue - Sun: 10 AM - 8 PM</div>
+                    <div className="font-medium">We are open all days :)   9 AM - 9 PM</div>
                   </div>
                 </div>
 
                 <a
-                  href="https://instagram.com/nrvbeauty"
+                  href="https://www.instagram.com/glowupbyrohireddy?utm_source=qr&igsh=ZTNod253b2k5Z3pi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group"
@@ -269,26 +272,25 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Follow Us</div>
-                    <div className="font-medium">@nrvbeauty</div>
+                    <div className="font-medium">@glowupbyrohireddy</div>
                   </div>
                 </a>
               </div>
             </div>
 
             {/* Map Placeholder */}
-            <div className="glass-card overflow-hidden">
-              <div className="aspect-video bg-muted flex items-center justify-center">
-                <div className="text-center p-8">
-                  <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <p className="text-muted-foreground">
-                    Interactive map will be displayed here
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    123 Beauty Lane, Mumbai 400001
-                  </p>
+              <div className="glass-card overflow-hidden">
+                <div className="h-80 md:h-96">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3889.0863171124693!2d77.733031!3d12.902170999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDU0JzA3LjgiTiA3N8KwNDMnNTguOSJF!5e0!3m2!1sen!2sin!4v1769104808860!5m2!1sen!2sin"
+                    className="w-full h-full"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </div>
-            </div>
           </motion.div>
         </div>
       </div>

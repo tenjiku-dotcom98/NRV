@@ -15,7 +15,7 @@ const galleryImages = [
   { src: galleryMehndi, alt: 'Intricate bridal mehndi', category: 'Mehndi' },
   { src: gallerySaree, alt: 'Traditional saree draping', category: 'Bridal' },
   { src: gallery2, alt: 'Elegant bridal look', category: 'Bridal' },
-  { src: galleryHair, alt: 'Bridal hairstyling', category: 'Hair' },
+  { src: galleryHair, alt: 'Casual hairstyling', category: 'Hair' },
   { src: galleryParty, alt: 'Glamorous party makeup', category: 'Party' },
 ];
 

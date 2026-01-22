@@ -90,7 +90,7 @@ export default function Packages() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="section-heading mb-4"
           >
-            Bridal Packages
+            The NRV Experince
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

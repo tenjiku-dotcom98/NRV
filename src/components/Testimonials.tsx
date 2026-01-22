@@ -9,24 +9,24 @@ import testimonial3 from '/assets/testimonial-3.jpg';
 const testimonials = [
   {
     name: 'Priya Sharma',
-    role: 'Bride, December 2024',
+    role: 'Bride, December 2025',
     image: testimonial1,
     quote: 'NRV made my wedding day absolutely magical. The team understood exactly what I wanted and executed it flawlessly. I felt like the most beautiful bride!',
-    rating: 5,
+    rating: 4,
   },
   {
     name: 'Anjali Patel',
-    role: 'Bride, November 2024',
+    role: 'Bride, November 2025',
     image: testimonial2,
     quote: 'From the trial to the wedding day, every experience with NRV was exceptional. The attention to detail and personalized care made all the difference.',
     rating: 5,
   },
   {
     name: 'Meera Reddy',
-    role: 'Bride, October 2024',
+    role: 'Bride, October 2025',
     image: testimonial3,
     quote: 'I cannot thank NRV enough for making me feel so special. The bridal package was worth every penny. My photos look stunning!',
-    rating: 5,
+    rating: 4,
   },
 ];
 

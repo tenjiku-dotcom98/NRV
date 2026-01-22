@@ -117,10 +117,10 @@ export function Footer() {
         <div className="border-t border-secondary-foreground/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-secondary-foreground/50 text-sm">
-              © 2024 NRV - House of Beauty. All rights reserved.
+              © 2026 NRV - House of Beauty. All rights reserved.
             </p>
             <p className="text-secondary-foreground/50 text-sm flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-primary fill-current" /> in Mumbai
+              Made with <Heart className="w-4 h-4 text-primary fill-current" /> in Bengaluru
             </p>
           </div>
         </div>
